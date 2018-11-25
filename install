@@ -1,3 +1,13 @@
+# Mouse
+sudo apt-get install xbindkeys xautomation x11-utils
+xev | grep button
+xbindkeys --defaults > ~/.xbindkeysrc
+subl .xbindkeysrc ~/.xbindkeysrc
+
+# Files
+cp -a bin ~/bin
+cp .gitconfig ~
+
 # install chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
@@ -7,8 +17,8 @@ sudo apt-get install google-chrome-stable
 # install anaconda 3.x
 google-chrome https://www.anaconda.com/download/#linux
 cd ~/Downloads
-chmod +x
-./
+bash Anaconda
+conda create --name py2 python=2.7 anaconda
 
 # aws cli
 pip install --upgrade --user awscli
@@ -28,13 +38,14 @@ sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev
 # OpenCV
 sudo apt-get install build-essential
 sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo apt update
+sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libv4l-dev
 cd ~/Downloads
 git clone https://github.com/opencv/opencv.git
 cd opencv
 git checkout tags/2.4.13.2
-mkdir release
-cd release
+mkdir release && cd release
 cmake -D CMAKE_BUILD_TYPE=RELEASE ..
 make -j4
 sudo make install
@@ -42,13 +53,6 @@ sudo make install
 # Tensorflow
 conda install tensorflow-gpu
 conda install keras-gpu
-conda create --name py2 python=2.7 anaconda
-
-# Mouse
-sudo apt-get install xbindkeys xautomation x11-utils
-xev | grep button
-xbindkeys --defaults > ~/.xbindkeysrc
-subl .xbindkeysrc
 
 # Synergy
 ./synergy.sh server <peer-hostname> <peer-ip>
