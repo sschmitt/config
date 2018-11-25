@@ -6,6 +6,9 @@ sudo apt-get install google-chrome-stable
 
 # install anaconda 3.x
 google-chrome https://www.anaconda.com/download/#linux
+cd ~/Downloads
+chmod +x
+./
 
 # aws cli
 pip install --upgrade --user awscli
