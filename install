@@ -7,6 +7,10 @@ subl .xbindkeysrc ~/.xbindkeysrc
 # Files
 cp -a bin ~/bin
 cp .gitconfig ~
+cp .bash_aliases ~
+
+# Linux Mint Icing Applet
+# Applets - "Icing Task Manager"
 
 # install chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -21,7 +25,8 @@ bash Anaconda
 conda create --name py2 python=2.7 anaconda
 
 # aws cli
-pip install --upgrade --user awscli
+conda install -c conda-forge awscli
+aws configure
 
 # Sublime text
 sudo add-apt-repository ppa:webupd8team/sublime-text-2
@@ -34,25 +39,24 @@ sudo apt-get install sublime-text
 # Qt
 sudo apt install g++
 sudo apt-get install libgl1-mesa-dev libglu1-mesa-dev
+google-chrome https://www.qt.io/download
+
+# OpenSSL 1.0.2g
+sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+sudo apt-get update
+sudo apt-get install libssl1.0.0=1.0.2g-1ubuntu4.13
+sudo apt-get install libssl-dev=1.0.2g-1ubuntu4.13
+sudo apt-get install openssl=1.0.2g-1ubuntu4.13
 
 # OpenCV
-sudo apt-get install build-essential
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
-sudo apt update
-sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libv4l-dev
-cd ~/Downloads
-git clone https://github.com/opencv/opencv.git
-cd opencv
-git checkout tags/2.4.13.2
-mkdir release && cd release
-cmake -D CMAKE_BUILD_TYPE=RELEASE ..
-make -j4
-sudo make install
+google-chrome https://docs.opencv.org/3.4/d7/d9f/tutorial_linux_install.html
 
 # Tensorflow
 conda install tensorflow-gpu
 conda install keras-gpu
+
+# Pulse audio GUI
+sudo apt-get install pavucontrol
 
 # Synergy
 ./synergy.sh server <peer-hostname> <peer-ip>
