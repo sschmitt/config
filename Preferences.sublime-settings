@@ -12,7 +12,7 @@
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"default_line_ending": "unix",
 	"draw_minimap_border": true,
-    "enable_tab_scrolling": false,
+	"enable_tab_scrolling": false,
 	"fade_fold_buttons": false,
 	"fold_buttons": true,
 	"font_size": 11,
