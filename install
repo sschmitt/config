@@ -36,6 +36,10 @@ sudo apt-get --purge remove sublime-text*
 # Now to install Sublime Text, type the following:
 sudo apt-get install sublime-text
 
+# Sublime text preferences
+# Ctrl+`
+import urllib.request,os,hashlib; h = '4b86378e0afcd2ad5ac007f369be4059' + '5ce94c1559eaae2b4f88ac6125716bac'; pf = 'Preferences.sublime-settings'; pp = sublime.packages_path(); urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by = urllib.request.urlopen('https://raw.githubusercontent.com/sschmitt/config/master/' + pf).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join(pp, 'User', pf), 'wb' ).write(by)
+
 # jq
 sudo apt install jq
 
