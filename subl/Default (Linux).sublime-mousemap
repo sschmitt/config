@@ -1,0 +1,9 @@
+[
+    // Switch files with back/forward buttons
+    { "button": "button8", "modifiers": [], "command": "next_view_in_stack" },
+    { "button": "button9", "modifiers": [], "command": "prev_view_in_stack" },
+
+    // Soft undo / redo
+    { "button": "button8", "modifiers": ["ctrl"], "command": "soft_undo" },
+    { "button": "button9", "modifiers": ["ctrl"], "command": "soft_redo" }
+]
