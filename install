@@ -64,3 +64,10 @@ sudo apt-get install pavucontrol
 # Synergy
 ./synergy.sh server <peer-hostname> <peer-ip>
 # Run synergy app
+
+# VPK
+pip install vpk
+
+# image utilities
+sudo apt install ffmpeg
+sudo apt install libgraphicsmagick++-q16-12 imagemagick-6.q16
