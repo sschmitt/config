@@ -1,0 +1,34 @@
+# Deactivate the startup message of screen
+startup_message off
+
+# Setup hardstatus line
+hardstatus off
+hardstatus alwayslastline
+setenv HARDSTATUS_COLOR_CYAN '%{= .C}'
+setenv HARDSTATUS_COLOR_GRAY '%{= .K}'
+setenv HARDSTATUS_COLOR_POP '%{-}'
+setenv HARDSTATUS_LEFT '%-w'
+setenv HARDSTATUS_RIGHT '%+w'
+setenv HARDSTATUS_CENTER "${HARDSTATUS_COLOR_CYAN}%50>%n %t${HARDSTATUS_COLOR_POP}"
+setenv HARDSTATUS_STRING "${HARDSTATUS_COLOR_CYAN}[${HARDSTATUS_COLOR_GRAY} ${HARDSTATUS_LEFT}${HARDSTATUS_CENTER}${HARDSTATUS_RIGHT} ${HARDSTATUS_COLOR_POP}]%<${HARDSTATUS_COLOR_GRAY}"
+hardstatus string $HARDSTATUS_STRING
+
+# Fix for residual editor text
+altscreen on
+
+# Fix for Name column in windowlist only show "bash"
+windowlist string "%4n %h%=%f"
+
+# Indicate 256 color screen
+term screen-256color
+
+# Fix mouse wheel scrolling
+termcapinfo xterm* ti@:te@
+
+# Bind function keys F10-F12
+bindkey -k 'k;' other
+bindkey -k F1 prev
+bindkey -k F2 next
+
+# Increase recorded history
+defscrollback 100000
